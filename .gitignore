@@ -1,2 +1,6 @@
 # history
 /.history
+
+# dependencies
+/front/node_modules
+/back/node_modules
