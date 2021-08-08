@@ -1,0 +1,52 @@
+.header{
+  background-color: white;
+
+  @include flexbox(between, center);
+  height: 54px;
+
+  .icon-button{
+    width:54px;
+    height: 54px;
+
+    .ic-bar,
+    .ic-search {
+      font-size: 25px;
+      font-weight: 100;
+    }
+  }
+
+  @include responsive(T) {
+    margin-top: 28px;     // 나중에 위에 컴포넌트 생기면 가질 크기.
+
+    &-nav-list {
+      @include flexbox;
+      font-size: 15px;
+      height: 48px;
+    }
+    
+    &-nav-item{
+      @include inline-flexbox;
+      padding: 0 7px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 150ms ease-in-out;
+        
+
+      &.is-active{
+        border-color: $border-hover;
+      }
+      
+      &:hover{
+        border-color: $border-hover;
+      }
+
+      a{
+        // display: inline-block;
+        font-weight: 500;
+      }
+
+      button{
+        font-weight: 700;
+      }
+    }
+  }
+}
