@@ -10,8 +10,8 @@ const Header = (props) => (
               
               <div className="header">
                   {/* 모바일 */}
-                <button className="icon-button">
-                  <FontAwesomeIcon icon={faBars} className="sm-only ic-bar" />
+                <button className="sm-only icon-button">
+                  <FontAwesomeIcon icon={faBars} className="ic-bar" />
                 </button>
                 
                 <h1 className="header-title" >사이트 이름</h1>
@@ -32,8 +32,8 @@ const Header = (props) => (
                   </ul>
                 </nav>
 
-                <button className="icon-button">
-                  <FontAwesomeIcon icon={faSearch} className="sm-only ic-search" />
+                <button className="sm-only icon-button">
+                  <FontAwesomeIcon icon={faSearch} className="ic-search" />
                 </button>
               </div>
 
