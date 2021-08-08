@@ -10,17 +10,17 @@ const Header = (props) => (
               
               <div className="header">
                   {/* 모바일 */}
-                <button className="sm-only icon-button">
+                <button className="icon-button sm-only ">
                   <FontAwesomeIcon icon={faBars} className="ic-bar" />
                 </button>
                 
                 <h1 className="header-title" >사이트 이름</h1>
 
-                <nav className="sm-hidden">
+                <nav className="header-nav sm-hidden">
                   {/* h1 헤더 nav 숨길 것 */}
                   <h1 className="visually-hidden">헤더 nav</h1> 
                   <ul className="header-nav-list" >
-                    <li className="header-nav-item">
+                    <li className="header-nav-item is-active">
                       <a href="/">제품 소개</a>
                     </li>
                     <li className="header-nav-item">
@@ -32,7 +32,7 @@ const Header = (props) => (
                   </ul>
                 </nav>
 
-                <button className="sm-only icon-button">
+                <button className="icon-button sm-only ">
                   <FontAwesomeIcon icon={faSearch} className="ic-search" />
                 </button>
               </div>
