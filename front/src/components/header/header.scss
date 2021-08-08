@@ -1,3 +1,17 @@
-header{
-  background-color: $white;
+.header{
+  background-color: pink;
+
+  @include flexbox(between, center);
+  height: 60px;
+
+  .icon-button{
+    width:54px;
+    height: 54px;
+
+    .ic-bar,
+    .ic-search {
+      font-size: 25px;
+      font-weight: 100;
+    }
+  }
 }
