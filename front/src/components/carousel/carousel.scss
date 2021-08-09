@@ -1,14 +1,18 @@
 .carousel-slider{
-  position: relative;
+  $border-size: 1px;
+
+  // position: relative;
   height: 470px;
   
   &-list {
+    position: relative;
+
     height: 100%;
-    border: 1px solid $border;
+    border: $border-size solid $border;
   }
 
   &-item {
-    @include flexbox;
+    // @include flexbox;
     width:100%;
 
     img {
@@ -28,16 +32,17 @@
         margin-bottom: 6px;
       }
   
-      p {
+      .sub-title {
+        display: block;
         font-size: 14px;
       }
     }
   }
 
-  .tns-nav{
+  .tns-nav {
     position: absolute;
-    bottom: 0;
-    right: 15px;
+    bottom: -25px;
+    right: -5px;
 
     .tns-nav-active{
       background-color: $border-hover;
@@ -54,6 +59,52 @@
       &:hover{
         background-color: $border-hover;
       }
+    }
+  }
+
+  @include responsive(T) {
+    height: 500px;
+
+    .carousel-slider-item {
+      display: inline-flex !important;  // .tns-slider give display: inline-block
+
+      img {
+        width: 60%;
+        height: 500px - ($border-size * 2);
+        margin-bottom: 0;
+      }
+    }
+
+    .item-text {
+      @include column-flexbox(center, start);
+      width:40%;
+      height: 100%;
+      padding: 0 50px;
+      margin-bottom: 0;
+
+      strong {
+        font-size: 26px;
+        line-height: 32px;
+        padding-top: 60px;
+        padding-bottom: 25px;
+      }
+
+      .sub-title{
+        margin-bottom: 9px;
+      }
+
+      .slider-description  {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+      }
+      
+    }
+
+    .tns-nav {
+      bottom: 5px;
+      right: 10px;
+      z-index: 100;
     }
   }
 }
