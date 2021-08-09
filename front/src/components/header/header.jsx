@@ -2,7 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Header = (props) => (
+const Header = (props) => {
+
+  return(
       <header>
         <div className="container">
           <div className="row">
@@ -41,6 +43,7 @@ const Header = (props) => (
           </div>
         </div>
       </header>
-  );
+    )
+  };
 
 export default Header;
