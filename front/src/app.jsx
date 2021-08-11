@@ -5,7 +5,7 @@ import ProductList from './components/product-list/product-list';
 import Board from './components/board/board';
 import Footer from './components/footer/footer';
 
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import './styles/main.scss';
 
@@ -14,20 +14,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-          
-      <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
+      <BrowserRouter>
 
-
-        <BrowserRouter>
-          <li>
-            <Link to="/board">Board</Link>
-          </li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-
+        <Header />
+        <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
           <Switch>
             <Route path="/board" exact >
@@ -39,9 +30,11 @@ function App() {
             </Route>
           </Switch>
 
-        </BrowserRouter>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+
+      </BrowserRouter>
+
     </div>
   );
 }

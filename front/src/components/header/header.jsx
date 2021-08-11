@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -18,9 +19,9 @@ const Header = () => {
                 </button>
                 
                 <h1 className="header-title" >
-                  <a href="/">
+                  <Link to="/">
                     과일 도매상
-                  </a>
+                  </Link>
                 </h1>
 
                 <nav className="header-nav sm-hidden">
@@ -31,7 +32,7 @@ const Header = () => {
                       <a href="/">제품 소개</a>
                     </li>
                     <li className="header-nav-item">
-                      <a href="/board" >문의 게시판</a>
+                      <Link to="/board" >문의 게시판</Link>
                     </li>
                     <li className="header-nav-item">
                       <button className="login-button" type="button">로그인</button>
