@@ -1,0 +1,12 @@
+.product-list {
+  margin-bottom: 21px;
+
+  &-title {
+    font-size:18px;
+    padding: 20px 10px 10px 10px;
+  }
+
+  &-container {
+    @include column-flexbox(start, start);
+  }
+}
