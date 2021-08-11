@@ -9,4 +9,11 @@
   &-container {
     @include column-flexbox(start, start);
   }
+
+  @include responsive(T) {
+    &-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
 }

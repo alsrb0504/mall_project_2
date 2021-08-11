@@ -28,4 +28,10 @@
       }
     }
   }
+
+  @include responsive(T) {
+    // width: 22%;
+    padding: 15px 10px 15px 10px;
+    flex-basis: 25%;
+  }
 }

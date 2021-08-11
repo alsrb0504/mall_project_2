@@ -12,6 +12,22 @@ const ProductList = (props) => {
             <ul className="product-list-container">
               <ProductItem />
               <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+              <ProductItem />
+
+
             </ul>
           </div>
         </div>
