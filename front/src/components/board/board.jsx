@@ -1,16 +1,18 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import BoardItem from '../board-item/board-item';
+
 const Board = (props) => {
   
-  // 고민
-  // 글 구성 등은 그냥 하면 되긴 한데
-  // 글 클릭 시, main 안의 component를 바꿔야 하는 건가?
-
+  let { id } = useParams();
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm-4">
+
+          <h2>Param: {id}</h2>
+
           <div>
             <h2>문의 게시판</h2>
             <div>
