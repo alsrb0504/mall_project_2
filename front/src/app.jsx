@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <main style={{backgroundColor: 'rgb(238, 234, 234)'}}>
+      <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
         <Carousel />
         <ProductList />
       </main>
