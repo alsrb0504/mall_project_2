@@ -1,5 +1,5 @@
 .board {
-  background-color: $white;
+  background-color: $background;
   padding-top: 10px;
 
   &-title {
@@ -14,7 +14,7 @@
 
   &-pagination {
     @include flexbox;
-    background-color: $white;
+    background-color: $background;
     position: relative;
     padding: 20px 10px;
 
@@ -54,6 +54,27 @@
 
       &:hover {
         opacity: 0.8;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    padding-top: 30px;
+    
+    &-pagination {
+      padding: 30px 10px;
+
+      .page-button {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 18px;
+      }
+  
+      .board-write-button {
+        right: 10px;
+        font-size: 20px;
+        padding: 8px 12px;
       }
     }
   }
