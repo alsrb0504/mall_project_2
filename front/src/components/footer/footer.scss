@@ -1,0 +1,96 @@
+.footer{
+  background-color: $footer-background;
+
+  &-container{
+    @include column-flexbox;
+    color: $footer-font-color;
+  }
+
+  &-title {
+    font-size: 24px;
+    color: $border;
+    padding: 25px 0 40px 0;
+  }
+
+  &-info {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 500;;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    word-spacing: 0.1em;
+
+    
+
+    &-item {
+      @include flexbox;
+
+      &.address-info {
+        padding-top: 21px;
+
+        address {
+          color: $border-hover;
+          font-weight: 500;
+        }
+      }
+
+      dt::after{
+        content: ':';
+        margin: 0 5px;
+      }
+    }
+  }
+
+  &-sub-title{
+    font-size: 16px;
+    color: $white;
+    margin-bottom: 21px;
+  }
+
+  &-button-container{
+    margin-bottom: 21px;
+    text-align: center;
+
+    .footer-button-title{
+      margin-bottom: 21px;
+    }
+
+    button {
+      width: 40px;
+      height: 40px;
+      color: $footer-font-color;
+      border: 1px solid $footer-button-border;
+      margin-right: 10px;
+      background-color: $footer-button-color;
+
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 40px;
+    }
+
+    &-title,
+    &-info,
+    &-button-container {
+      flex-basis:30%;
+    }
+
+    &-info,
+    &-button-container {
+      text-align: left;
+      margin-left: 15px;
+    }
+
+    &-info-item {
+      justify-content: flex-start;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.board-item {
+  width:100%;
+  background-color: $white;
+  padding: 12px 10px;
+  border-bottom: 2px solid $border;
+
+  &-container{
+    @include flexbox(between, center);
+
+    &.board-top {
+      font-weight: bold;
+
+      h4 {
+        font-weight: bold;
+      }
+    }
+    
+    .board-item-number {
+      display: block;
+      flex-basis: 15%;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    .board-item-title {
+      display: block;
+      padding-right: 10px;
+      flex-basis: 60%;
+      flex: 1;
+      font-weight: 400;
+      text-align: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .board-item-userId {
+      display: block;
+      padding-right: 5px;
+      flex-basis: 25%;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+

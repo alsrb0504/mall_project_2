@@ -8,6 +8,14 @@
     width:54px;
     height: 54px;
 
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
     .ic-bar,
     .ic-search {
       font-size: 25px;

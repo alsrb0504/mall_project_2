@@ -1,0 +1,37 @@
+.product-item {
+  padding: 8px 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &-info {
+    padding: 10px;
+    padding-bottom: 20px;
+    background-color: $white;
+
+    h4 {
+      padding: 10px 5px 0 5px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .price-info {
+      @include flexbox(between);
+      padding: 5px 5px 0 5px;
+      font-size: 14px;
+
+      .price {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    // width: 22%;
+    padding: 15px 10px 15px 10px;
+    flex-basis: 25%;
+  }
+}

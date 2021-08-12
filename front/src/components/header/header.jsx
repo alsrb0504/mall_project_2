@@ -1,8 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
+
 
   return(
       <header>
@@ -16,7 +18,11 @@ const Header = (props) => {
                   <FontAwesomeIcon icon={faBars} className="ic-bar" />
                 </button>
                 
-                <h1 className="header-title" >사이트 이름</h1>
+                <h1 className="header-title" >
+                  <Link to="/">
+                    과일 도매상
+                  </Link>
+                </h1>
 
                 <nav className="header-nav sm-hidden">
                   {/* h1 헤더 nav 숨길 것 */}
@@ -26,7 +32,7 @@ const Header = (props) => {
                       <a href="/">제품 소개</a>
                     </li>
                     <li className="header-nav-item">
-                      <a href="/">문의 게시판</a>
+                      <Link to="/board" >문의 게시판</Link>
                     </li>
                     <li className="header-nav-item">
                       <button className="login-button" type="button">로그인</button>
