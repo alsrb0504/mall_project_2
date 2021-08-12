@@ -1,0 +1,14 @@
+.board {
+  background-color: skyblue;
+  padding-top: 30px;
+
+  &-title {
+    padding-left: 10px;
+    margin-bottom: 24px;
+  }
+
+  &-list {
+    @include column-flexbox(center, start);
+    width:100%;
+  }
+}

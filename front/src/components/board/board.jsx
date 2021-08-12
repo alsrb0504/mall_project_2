@@ -1,40 +1,39 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
 import BoardItem from '../board-item/board-item';
 
-const Board = (props) => {
+const Board = ({board, boardTop}) => {
   
-  let { id } = useParams();
+  let count = board.length;    // 더 좋은 방법이 있지 않을까??
+
+  // item에서 스타일링 한 다음에
+  // list에서 import하고 추가로 font-weight하고 text-align만 주자.
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm-4">
 
-          <h2>Param: {id}</h2>
-
-          <div>
-            <h2>문의 게시판</h2>
-            <div>
-              <span>번호</span>
-              <span>제목</span>
-              <span>글쓴이</span>
-              <span>작성일</span>
-            </div>
+          <div className="board">
+            <h2 className="board-title">문의 게시판</h2>
 
             <main>
               <h1 className="visually-hidden" aria-label="게시글 목록">게시글 목록</h1>
-              <ul>
-                <BoardItem/>
-                <BoardItem/>
-                <BoardItem/>
-                <BoardItem/>      
+
+
+              <ul className="board-list">
+                <BoardItem item={boardTop} />
+                {
+                  board.map(item => {
+                    return (
+                      <BoardItem key={item.id} item={item} count={count--} />
+                    )
+                  })
+                }
               </ul>
 
-              {/* 게시글 클릭 시, 게시글 보여주는 component로 변환. */}
             </main>
 
-            <button>
+            <button className="board-write-button" type="button">
               글쓰기
             </button>
           </div>
