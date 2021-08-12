@@ -1,6 +1,6 @@
 .board {
-  background-color: skyblue;
-  padding-top: 30px;
+  background-color: $white;
+  padding-top: 10px;
 
   &-title {
     padding-left: 10px;
@@ -10,5 +10,51 @@
   &-list {
     @include column-flexbox(center, start);
     width:100%;
+  }
+
+  &-pagination {
+    @include flexbox;
+    background-color: $white;
+    position: relative;
+    padding: 20px 10px;
+
+    .page-button {
+      background-color: $white;
+      width: 24px;
+      height: 24px;
+      margin-right: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid $border-hover;
+      border-radius: 50%;
+      transition: transform 100ms ease-in-out;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:not(.icon-button):hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .board-write-button {
+      position:absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+
+      font-size: 14px;
+      font-weight: 600;
+      background-color: $border-hover;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: $white;
+      transition: opacity 100ms ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
