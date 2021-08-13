@@ -55,33 +55,35 @@ const Board = ({board, boardTop}) => {
                   }).map(item => <BoardItem key={item.id} item={item} count={item.id} />)
                 }
               </ul>
+
+              <div className="board-pagination">
+                <button className="icon-button page-button" onClick={handlePrev}>
+                  <FontAwesomeIcon icon={faChevronLeft} className="ic-icon" />
+                </button>
+
+                { // Create pagination buttons
+                  pagination_calc(board.length).map(item => 
+                    <button 
+                      key={item} 
+                      className="page-button"
+                      onClick={handleSelect}
+                    >
+                      {item}
+                    </button>
+                  )
+                }
+
+                <button className="icon-button page-button" onClick={handleNext}>
+                  <FontAwesomeIcon icon={faChevronRight} className="ic-icon" />
+                </button>
+
+                <button className="board-write-button" type="button">
+                  글쓰기
+                </button>
+              </div>
             </main>
             
-            <div className="board-pagination">
-              <button className="icon-button page-button" onClick={handlePrev}>
-                <FontAwesomeIcon icon={faChevronLeft} className="ic-icon" />
-              </button>
-
-              { // Create pagination buttons
-                pagination_calc(board.length).map(item => 
-                  <button 
-                    key={item} 
-                    className="page-button"
-                    onClick={handleSelect}
-                  >
-                    {item}
-                  </button>
-                )
-              }
-
-              <button className="icon-button page-button" onClick={handleNext}>
-                <FontAwesomeIcon icon={faChevronRight} className="ic-icon" />
-              </button>
-
-              <button className="board-write-button" type="button">
-                글쓰기
-              </button>
-            </div>
+            
 
           </div>
         </div>
