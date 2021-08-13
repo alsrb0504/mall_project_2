@@ -4,9 +4,18 @@
   padding: 12px 10px;
   border-bottom: 2px solid $border;
 
+  &:first-child {
+    border-top: 2px solid $border-hover;
+  }
+
+  &:last-child {
+    border-bottom: 2px solid $border-hover;
+  }
+
   &-container{
     @include flexbox(between, center);
-
+    transition: color 100ms ease-in-out;
+    
     &.board-top {
       font-weight: bold;
 
@@ -43,6 +52,36 @@
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+
+    &:not(.board-top):hover {
+      color: $border-hover;
+    }
+  }
+
+  @include responsive(T) {
+
+    .board-top {
+      .board-item-createdAt {
+        text-align: center;
+      }
+    }
+
+    .board-item-title {
+      flex-basis: 50%;
+    }
+
+    .board-item-userId {
+      flex-basis: 20%;
+    }
+
+    .board-item-createdAt {
+      flex-basis: 15%;
+      text-align: right;
+    }
+  }
+
+  @include responsive(D) {
+    font-size: 20px;
   }
 }
 
