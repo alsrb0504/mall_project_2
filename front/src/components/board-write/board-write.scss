@@ -52,6 +52,7 @@
 
     textarea {
       width: 100%;
+      max-width: 100%;
       min-height: 180px;
       padding: 15px 10px;
 
@@ -64,7 +65,7 @@
 
   &-buttons {
     @include flexbox;
-    padding: 10px 0;
+    padding-top: 20px;
 
 
     .cancel-button,
@@ -94,6 +95,40 @@
       border: 1px solid $border-hover;
 
       margin-left: 5px;
+    }
+  }
+
+  @include responsive(T) {
+    .board-write-title,
+    .board-write-author {
+      label {
+        width: 15%; 
+      }
+
+      input {
+        flex: 0;
+        margin-right: 20px;
+      }
+    }
+
+    .board-write-title input {
+        flex-basis: 60%;
+    }
+
+    .board-write-author input {
+        flex-basis: 30%;
+    }
+    
+    &-bottom {
+      textarea {
+        padding: 25px 20px;
+        font-size: 20px;
+  
+        &::placeholder {
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
     }
   }
 }
