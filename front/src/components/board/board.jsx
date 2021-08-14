@@ -1,10 +1,15 @@
 import BoardItem from '../board-item/board-item';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+
+import { Link } from 'react-router-dom';
+
 import { useState } from 'react';
 
+import BoardWrite from '../board-write/board-write';
 
-const Board = ({board, boardTop}) => {
+
+const Board = ({board, boardTop, test}) => {
 
   const [ lastIndex, setLastIndex ] = useState(board.length);
 
@@ -37,53 +42,62 @@ const Board = ({board, boardTop}) => {
           <div className="board">
             <h2 className="board-title" >문의 게시판</h2>
 
-            <main>
-              <h1 className="visually-hidden" aria-label="게시글 목록">게시글 목록</h1>
+            {/* 게시판 목록 보기 */}
+            { !test && 
+              <main>
+                <h1 className="visually-hidden" aria-label="게시글 목록">게시글 목록</h1>
 
+                <ul className="board-list">
+                  <BoardItem item={boardTop} />
+                  {
 
-              <ul className="board-list">
-                <BoardItem item={boardTop} />
-                {
-
-                  board.filter(item => {
-                    if(item.id > lastIndex - (10)) {
-                      if(item.id <= lastIndex) {
-                        return item;
+                    board.filter(item => {
+                      if(item.id > lastIndex - (10)) {
+                        if(item.id <= lastIndex) {
+                          return item;
+                        }
                       }
-                    }
-                    return null;
-                  }).map(item => <BoardItem key={item.id} item={item} count={item.id} />)
-                }
-              </ul>
+                      return null;
+                    }).map(item => <BoardItem key={item.id} item={item} count={item.id} />)
+                  }
+                </ul>
 
-              <div className="board-pagination">
-                <button className="icon-button page-button" onClick={handlePrev}>
-                  <FontAwesomeIcon icon={faChevronLeft} className="ic-icon" />
-                </button>
+                <div className="board-pagination">
+                  <button className="icon-button page-button" onClick={handlePrev}>
+                    <FontAwesomeIcon icon={faChevronLeft} className="ic-icon" />
+                  </button>
 
-                { // Create pagination buttons
-                  pagination_calc(board.length).map(item => 
-                    <button 
-                      key={item} 
-                      className="page-button"
-                      onClick={handleSelect}
-                    >
-                      {item}
+                  { // Create pagination buttons
+                    pagination_calc(board.length).map(item => 
+                      <button 
+                        key={item} 
+                        className="page-button"
+                        onClick={handleSelect}
+                      >
+                        {item}
+                      </button>
+                    )
+                  }
+
+                  <button className="icon-button page-button" onClick={handleNext}>
+                    <FontAwesomeIcon icon={faChevronRight} className="ic-icon" />
+                  </button>
+
+                  <Link to="/board/write">
+                    <button className="board-write-button" type="button">
+                      글쓰기
                     </button>
-                  )
-                }
 
-                <button className="icon-button page-button" onClick={handleNext}>
-                  <FontAwesomeIcon icon={faChevronRight} className="ic-icon" />
-                </button>
+                  </Link>
 
-                <button className="board-write-button" type="button">
-                  글쓰기
-                </button>
-              </div>
-            </main>
-            
-            
+                </div>
+              </main>
+            }
+
+            {/* 게시판 글 쓰기 */}
+            { test && 
+              <BoardWrite />
+            }
 
           </div>
         </div>

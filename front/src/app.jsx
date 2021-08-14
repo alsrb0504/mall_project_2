@@ -186,6 +186,11 @@ function App() {
         <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
           <Switch>
+            {/* 글쓰기시 */}
+            <Route path="/board/write" exact >
+              <Board board={board} test={'test'} boardTop={boardTop} />
+            </Route>
+
             <Route path="/board" exact >
               <Board board={board} boardTop={boardTop} />
 
