@@ -4,14 +4,20 @@ import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons
 
 import { Link } from 'react-router-dom';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import BoardWrite from '../board-write/board-write';
 
 
-const Board = ({board, boardTop, test}) => {
+const Board = ({board, boardTop, write, AddBoardItem}) => {
 
   const [ lastIndex, setLastIndex ] = useState(board.length);
+
+
+  // 게시글 추가 시, re-render를 위함.
+  useEffect(() => {
+    setLastIndex(board.length);
+  }, [board]);
 
   const handleNext = () => {
     const border = board.length % 10 + 1;
@@ -43,7 +49,7 @@ const Board = ({board, boardTop, test}) => {
             <h2 className="board-title" >문의 게시판</h2>
 
             {/* 게시판 목록 보기 */}
-            { !test && 
+            { !write && 
               <main>
                 <h1 className="visually-hidden" aria-label="게시글 목록">게시글 목록</h1>
 
@@ -95,8 +101,8 @@ const Board = ({board, boardTop, test}) => {
             }
 
             {/* 게시판 글 쓰기 */}
-            { test && 
-              <BoardWrite />
+            { write && 
+              <BoardWrite count={board.length} AddBoardItem={AddBoardItem} />
             }
 
           </div>

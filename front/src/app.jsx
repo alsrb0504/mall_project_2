@@ -176,6 +176,12 @@ function App() {
     },
   ]);
 
+  const AddBoardItem = (item) => {
+    const updated = [...board];
+    updated.unshift(item);
+    setBoard(updated);
+  }
+
 
   return (
     <div className="App">
@@ -188,11 +194,11 @@ function App() {
           <Switch>
             {/* 글쓰기시 */}
             <Route path="/board/write" exact >
-              <Board board={board} test={'test'} boardTop={boardTop} />
+              <Board board={board} write={true} boardTop={boardTop}  AddBoardItem={AddBoardItem}  />
             </Route>
 
             <Route path="/board" exact >
-              <Board board={board} boardTop={boardTop} />
+              <Board board={board} boardTop={boardTop}/>
 
               {/* 광고 컴포넌트 또는 글쓰기 컴포넌트 하나 만들자. */}
             </Route>
