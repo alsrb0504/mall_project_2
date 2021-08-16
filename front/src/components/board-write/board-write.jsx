@@ -20,13 +20,11 @@ const BoardWrite = ({count, AddBoardItem}) => {
       id: count + 1,
       title: titieRef.current.value,
       userId: authorRef.current.value,
-      createdAt: Date.now().toString(), // 수정 필요!!
+      createdAt: calc_date(),
       supervisor: false,
       content: textRef.current.value,
     }
     AddBoardItem(new_item);
-
-
 
     history.push('/board');
   }
@@ -91,3 +89,14 @@ const BoardWrite = ({count, AddBoardItem}) => {
 export default BoardWrite;
 
 
+function calc_date () {
+  const date = new Date();
+
+  const mm = date.getMonth() + 1; // getMonth() is zero-based
+  const dd = date.getDate();
+
+  return [date.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+  ].join('-');
+}
