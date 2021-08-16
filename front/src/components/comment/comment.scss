@@ -1,0 +1,25 @@
+.comment {
+  $mobile-margin-bottom: 5px;
+
+  padding: 15px;
+  border-bottom: 1px solid $border;
+
+  &-username {
+    margin-bottom: $mobile-margin-bottom;
+  }
+
+  &-message {
+    margin-bottom: $mobile-margin-bottom;
+    font-size: 18px;
+
+  }
+
+  &-date {
+    color: $font-secondary;
+    font-size: 14px;
+  }
+
+  @include responsive(T) {
+    padding-left: 25px;
+  }
+}

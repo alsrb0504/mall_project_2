@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Comment from '../comment/comment';
 
 const BoardContent = ({props}) => {
 
   const location = useLocation();
 
-  const {title, userId, createdAt, content} = location.state.item;
+  const {title, userId, createdAt, content, comments} = location.state.item;
 
   return (
     <article className="board-content">
@@ -30,7 +30,13 @@ const BoardContent = ({props}) => {
 
         <div>
           <ul>
-            <Comment />
+            {
+              comments &&
+              comments.map(comment => (
+                <Comment key={comment.id} item={comment}/>
+              ))
+            }
+
             
           </ul>
         </div>

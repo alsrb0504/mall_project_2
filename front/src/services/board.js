@@ -7,6 +7,26 @@ class BoardClass {
       createdAt: '2021-08-11',
       supervisor: false,
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
+      comments: [
+        {
+          id: '9092423',  // date.now()로 생성
+          username: 'user01',
+          message: '댓글 내용01',
+          createdAt: '2021-08-16',
+        },
+        {
+          id: '9092420',  // date.now()로 생성
+          username: '관리자',
+          message: '답변 내용',
+          createdAt: '2021-08-16',
+        },
+        {
+          id: '8888823',
+          username: 'user01',
+          message: '댓글 내용02',
+          createdAt: '2021-08-17',
+        }
+      ]
     },
     {
       id: 21,

@@ -1,12 +1,16 @@
 import React from 'react';
 
-const Comment = (props) => {
+const Comment = ({item}) => {
+
+  console.log(item);
+
+  const {username, message, createdAt} = item;
 
   return (
-    <li>
-      <h4>작성인</h4>
-      <p>댓글내용</p>
-      <span>작성 날짜</span>
+    <li className="comment">
+      <h4 className="comment-username">{username}</h4>
+      <p className="comment-message">{message}</p>
+      <span className="comment-date">{createdAt}</span>
     </li>
   )
 }
