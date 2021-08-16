@@ -6,6 +6,7 @@ const BoardItem = ({item, count}) => {
   const {title, userId, createdAt, supervisor} = item;
 
   // 나중에 Link에 각 아이템의 내용을 보여주는 페이지 이동 추가.
+  // link를 div로 바꾸고 history.push로 이동, 이때 useParam 사용.
 
   return (
     <li className="board-item">
@@ -26,11 +27,6 @@ const BoardItem = ({item, count}) => {
             <span className="board-item-createdAt sm-hidden">{createdAt}</span>
           </Link>
         }
-
-
-
-        
-        
     </li>
   )
 }
