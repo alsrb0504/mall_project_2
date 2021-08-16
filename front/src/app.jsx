@@ -9,8 +9,9 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './styles/main.scss';
 import { useState } from 'react';
 
-function App({ boardClass }) {
 
+
+function App({ boardClass }) {
   // for board-header
   const [ boardTop, setBoardTop ] = useState({
     id: 999,
@@ -44,6 +45,10 @@ function App({ boardClass }) {
             {/* 글쓰기시 */}
             <Route path="/board/write" exact >
               <Board board={board} write={true} boardTop={boardTop}  AddBoardItem={AddBoardItem}  />
+            </Route>
+
+            <Route path='/board/content/:slug'>
+              <Board write={false} content={true}  />
             </Route>
 
             <Route path="/board" exact >

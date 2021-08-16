@@ -2,10 +2,10 @@ import React from 'react';
 import BoardWrite from '../board-write/board-write';
 import BoardList from '../board-list/board-list';
 
+import BoardContent from '../board-content/board-content';
 
 
-
-const Board = ({board, boardTop, write, AddBoardItem}) => {
+const Board = ({board, boardTop, content, write, AddBoardItem}) => {
 
   return (
     <div className="container">
@@ -16,8 +16,13 @@ const Board = ({board, boardTop, write, AddBoardItem}) => {
             <h2 className="board-title" >문의 게시판</h2>
 
             {/* 게시판 목록 보기 */}
-            { !write && 
+            { (!write && !content) && 
               <BoardList board={board} boardTop={boardTop} />
+            }
+
+            {/* 게시판 글 내용 */}
+            { (!write && content) && 
+              <BoardContent/>
             }
 
             {/* 게시판 글 쓰기 */}
