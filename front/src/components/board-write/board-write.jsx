@@ -20,11 +20,13 @@ const BoardWrite = ({count, AddBoardItem}) => {
       id: count + 1,
       title: titieRef.current.value,
       userId: authorRef.current.value,
-      createdAt: Date.now().toString(),
+      createdAt: Date.now().toString(), // 수정 필요!!
       supervisor: false,
       content: textRef.current.value,
     }
     AddBoardItem(new_item);
+
+
 
     history.push('/board');
   }
@@ -87,3 +89,5 @@ const BoardWrite = ({count, AddBoardItem}) => {
 }
 
 export default BoardWrite;
+
+
