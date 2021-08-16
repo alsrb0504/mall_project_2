@@ -2,8 +2,6 @@ import React from 'react';
 
 const Comment = ({item}) => {
 
-  console.log(item);
-
   const {username, message, createdAt} = item;
 
   return (
