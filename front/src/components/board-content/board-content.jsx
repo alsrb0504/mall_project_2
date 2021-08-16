@@ -1,10 +1,6 @@
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-
-function BlogPost() {
-  let { slug } = useParams();
-  return <div>Now showing post {slug}</div>;
-}
+import Comment from '../comment/comment';
 
 const BoardContent = ({props}) => {
 
@@ -12,27 +8,42 @@ const BoardContent = ({props}) => {
 
   const {title, userId, createdAt, content} = location.state.item;
 
-  const handleClick = () => {
-    console.log('hi');
-  }
-
   return (
-    <main>
-      <h2 onClick={handleClick}>게시글 내용</h2>
-      {
-        BlogPost()
-      }
-
+    <article className="board-content">
+      <h2 className="visually-hidden" aria-hidden>board-item-content</h2>
       <div>
-        <h3>{title}</h3>
-        <span>{userId}</span>
-        <span>{createdAt}</span>
+        <h3 className="board-content-title">{title}</h3>
 
-        <p>{content}</p>
+        <section className="board-content-info">
+          <h3 className="visually-hidden" aria-hidden>유저 정보</h3>
+          <span className="username">{userId}</span>
+          <span className="date">{createdAt}</span>
+        </section>
+
+        <p className="board-content-text">{content}</p>
       </div>
 
-      {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quod qui iusto deleniti voluptas blanditiis, recusandae est excepturi fuga pariatur.</p> */}
-    </main>
+
+      {/* 댓글 다는 기능은 나중에 로그인 했을 경우에만 허용. */}
+      <section>
+        <h3 className="visually-hidden">댓글 기능</h3>
+
+        <div>
+          <ul>
+            <Comment />
+            
+          </ul>
+        </div>
+
+        <form className="board-content-form" action="/" method="POST">
+          <input type="text" placeholder="댓글을 입력하세요."/>
+          <button type="submit">등록</button>
+        </form>
+
+        
+
+      </section>
+    </article>
   )
 }
 
