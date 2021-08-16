@@ -3,9 +3,16 @@ import BoardWrite from '../board-write/board-write';
 import BoardList from '../board-list/board-list';
 
 import BoardContent from '../board-content/board-content';
+import { useHistory } from 'react-router-dom';
 
 
 const Board = ({board, boardTop, content, write, AddBoardItem}) => {
+
+  const history = useHistory();
+
+  const MoveToBoardHome = () => {
+    history.push('/board');
+  }
 
   return (
     <div className="container">
@@ -13,7 +20,7 @@ const Board = ({board, boardTop, content, write, AddBoardItem}) => {
         <div className="col-sm-4">
 
           <div className="board">
-            <h2 className="board-title" >문의 게시판</h2>
+            <h2 onClick={MoveToBoardHome} className="board-title" >문의 게시판</h2>
 
             {/* 게시판 목록 보기 */}
             { (!write && !content) && 
