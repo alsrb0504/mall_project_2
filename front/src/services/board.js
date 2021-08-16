@@ -156,22 +156,13 @@ class BoardClass {
     },
   ]
 
-  constructor() {
-    console.log('Board class');
-    console.log(this.board_items);
-  }
-
   add_board (item) {
     this.board_items.unshift(item);
-    console.log(this.board_items);
   }
 
   get_board() {
-    console.log(this.board_items);
     return this.board_items;
   }
-
 }
-
 
 export default BoardClass;
