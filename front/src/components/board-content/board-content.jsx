@@ -1,16 +1,19 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 function BlogPost() {
   let { slug } = useParams();
   return <div>Now showing post {slug}</div>;
 }
 
-const BoardContent = (props) => {
+const BoardContent = ({props}) => {
+
+  const location = useLocation();
+
+  const {title, userId, createdAt, content} = location.state.item;
 
   const handleClick = () => {
-
-    console.log(BlogPost());
+    console.log('hi');
   }
 
   return (
@@ -19,6 +22,15 @@ const BoardContent = (props) => {
       {
         BlogPost()
       }
+
+      <div>
+        <h3>{title}</h3>
+        <span>{userId}</span>
+        <span>{createdAt}</span>
+
+        <p>{content}</p>
+      </div>
+
       {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quod qui iusto deleniti voluptas blanditiis, recusandae est excepturi fuga pariatur.</p> */}
     </main>
   )

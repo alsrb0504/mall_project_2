@@ -6,6 +6,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 21,
@@ -13,6 +14,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 20,
@@ -20,6 +22,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 19,
@@ -27,6 +30,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 18,
@@ -34,6 +38,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 17,
@@ -41,6 +46,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 16,
@@ -48,6 +54,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 15,
@@ -55,6 +62,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 14,
@@ -62,6 +70,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 13,
@@ -69,6 +78,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 12,
@@ -76,6 +86,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 11,
@@ -83,6 +94,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 10,
@@ -90,6 +102,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 9,
@@ -97,6 +110,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 8,
@@ -104,6 +118,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 7,
@@ -111,6 +126,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 6,
@@ -118,6 +134,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 5,
@@ -125,6 +142,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 4,
@@ -132,6 +150,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 3,
@@ -139,6 +158,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 2,
@@ -146,6 +166,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 1,
@@ -153,6 +174,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
   ]
 
