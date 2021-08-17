@@ -61,7 +61,7 @@ function App({ boardClass, product_class }) {
             </Route>
             <Route path="/">
               <Carousel product_class={product_class}/>
-              <ProductList />
+              <ProductList product_class={product_class}/>
             </Route>
           </Switch>
 

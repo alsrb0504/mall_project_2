@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductItem from '../product-item/product-item';
 
-const ProductList = (props) => {
+const ProductList = ({product_class}) => {
 
   return (
     <div className="container">
@@ -10,23 +10,11 @@ const ProductList = (props) => {
           <div className="product-list">
             <h4 className="product-list-title">판매 상품</h4>
             <ul className="product-list-container">
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-              <ProductItem />
-
+              {
+                product_class.product_list.map(item =>
+                  <ProductItem key={item.id} item={item} />
+                )
+              }
 
             </ul>
           </div>
