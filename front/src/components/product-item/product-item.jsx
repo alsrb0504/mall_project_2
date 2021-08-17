@@ -1,19 +1,21 @@
 import React from 'react';
 
-const ProductItem = (props) => {
+const ProductItem = ({item}) => {
+
+  const { name, price_info, thumbnail } = item;
 
   return (
     <li className="product-item">
       <a href="/">
-        <img src="/images/pic01.jpg" alt="상품 이미지" />
+        <img src={thumbnail} alt="상품 이미지" />
         <div className="product-item-info">
-          <h4>새벽이슬 사과</h4>
+          <h4>{name}</h4>
           <div className="price-info">
             <span>
-              5kg 당
+              {price_info.unit}kg 당
             </span>
             <span className="price">
-              29,900원
+              {price_info.price}원
             </span>
           </div>
         </div>

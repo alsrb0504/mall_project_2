@@ -1,0 +1,116 @@
+.board-content {
+  margin-bottom: 25px;  
+  background-color: $white;
+  border-top: 2px solid $border-hover;
+
+  border-bottom: 2px solid $border-hover;
+
+  &-title {
+    font-size: 20px;
+    padding: 15px 10px;
+    border-bottom: 1px solid $border;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-info {
+    @include flexbox(between, center);
+    font-size: 18px;
+    color: $font-secondary;
+    padding: 10px 0;
+    border-bottom: 2px solid $border;
+    
+    .username {
+      padding-left: 10px;
+    }
+
+    .date {
+      padding-right: 10px;
+    }
+  }
+
+  &-text {
+    padding: 15px 10px;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    word-spacing: 0.1em;
+    border-bottom: 2px solid $border;
+  }
+
+  &-form {
+    position: relative;
+    padding: 10px 10px;
+    border-top: 1px solid $border;
+
+    input {
+      width:100%;
+      padding: 10px 5px;
+      padding-right: 70px;
+      font-size: 18px;
+      border: 1px solid $border;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      font-size: 18px;
+      color: $white;
+      background-color: $border-hover;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transform:translateY(-50%);
+      transition: opacity 100ms ease-in-out;
+
+      &:hover,
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-title {
+      font-size: 22px;
+      padding: 20px 15px;
+    }
+
+    &-info {
+      font-size: 20px;
+      padding: 15px 0;
+
+      .username {
+        padding-left: 15px;
+      }
+
+      .date {
+        padding-right: 15px;
+      }
+    }
+
+    &-text {
+      padding: 20px 15px;
+      font-size: 24px;
+    }
+
+    &-form {
+      padding: 20px 15px;
+      
+      input {
+        
+        padding: 15px 10px;
+        padding-right: 100px;
+        font-size: 20px;
+      }
+
+      button {
+        right: 30px;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 6px 12px;
+      }
+    }
+  }
+}

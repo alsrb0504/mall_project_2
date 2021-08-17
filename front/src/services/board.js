@@ -6,6 +6,27 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
+      comments: [
+        {
+          id: '9092423',  // date.now()로 생성
+          username: 'user01',
+          message: '댓글 내용01',
+          createdAt: '2021-08-16',
+        },
+        {
+          id: '9092420',  // date.now()로 생성
+          username: '관리자',
+          message: '답변 내용',
+          createdAt: '2021-08-16',
+        },
+        {
+          id: '8888823',
+          username: 'user01',
+          message: '댓글 내용02',
+          createdAt: '2021-08-17',
+        }
+      ]
     },
     {
       id: 21,
@@ -13,6 +34,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 20,
@@ -20,6 +42,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 19,
@@ -27,6 +50,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 18,
@@ -34,6 +58,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 17,
@@ -41,6 +66,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 16,
@@ -48,6 +74,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 15,
@@ -55,6 +82,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 14,
@@ -62,6 +90,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 13,
@@ -69,6 +98,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 12,
@@ -76,6 +106,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 11,
@@ -83,6 +114,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 10,
@@ -90,6 +122,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 9,
@@ -97,6 +130,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 8,
@@ -104,6 +138,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 7,
@@ -111,6 +146,7 @@ class BoardClass {
       userId: 'userId',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     { 
       id: 6,
@@ -118,6 +154,7 @@ class BoardClass {
       userId: 'userId-2',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 5,
@@ -125,6 +162,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 4,
@@ -132,6 +170,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 3,
@@ -139,6 +178,7 @@ class BoardClass {
       userId: 'userId-3',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 2,
@@ -146,6 +186,7 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
     {
       id: 1,
@@ -153,25 +194,42 @@ class BoardClass {
       userId: 'userId-4',
       createdAt: '2021-08-11',
       supervisor: false,
+      content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor quis vero praesentium, adipisci enim asperiores, animi officia ipsam qui magni vitae doloribus architecto non molestias quam itaque provident eaque!',
     },
   ]
 
-  constructor() {
-    console.log('Board class');
-    console.log(this.board_items);
+  board_top = { 
+    id: 999,
+    title: '제목',
+    userId: '글쓴이',
+    createdAt: '작성일',
+    supervisor: true,
   }
 
   add_board (item) {
     this.board_items.unshift(item);
-    console.log(this.board_items);
   }
 
   get_board() {
-    console.log(this.board_items);
     return this.board_items;
   }
 
-}
+  add_comment (comment, id) {
+    const select = this.board_items.find((item) => {
+      if(id === item.id) {
+        return item;
+      }
+    });
 
+    // 댓글이 없을 때, comments 배열 생성.
+    if(!select.comments) {
+      select.comments = new Array();
+    }
+
+    select.comments.push(comment);
+
+    return select.comments;
+  }
+}
 
 export default BoardClass;
