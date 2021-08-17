@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 
 
-function App({ boardClass }) {
+function App({ boardClass, product_class }) {
 
   const [ board, setBoard ] = useState(boardClass.get_board());
 
@@ -60,7 +60,7 @@ function App({ boardClass }) {
               {/* 광고 컴포넌트 또는 글쓰기 컴포넌트 하나 만들자. */}
             </Route>
             <Route path="/">
-              <Carousel />
+              <Carousel product_class={product_class}/>
               <ProductList />
             </Route>
           </Switch>

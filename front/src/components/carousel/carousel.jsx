@@ -1,11 +1,6 @@
 import React from 'react';
-
 import TinySlider from "tiny-slider-react";
-import Product from '../../services/product';
 import CarouselItem from '../carousel-item/carousel-item';
-
-
-const product_class = new Product();
 
 const settings = {
   container: '.carousel-slider-list',
@@ -20,9 +15,8 @@ const settings = {
   // preventScrollOnTouch: true,
 };
 
-
   
-const Carousel = (props) => {
+const Carousel = ({product_class}) => {
 
   return (
     <div className="carousel-slider">
