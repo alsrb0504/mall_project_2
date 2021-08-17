@@ -49,21 +49,19 @@
   }
 
   @include responsive(D) {
-    .board-pagination {
-      padding: 30px 10px;
+    padding: 30px 10px;
 
-      .page-button {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-        font-size: 18px;
-      }
+    .page-button {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      font-size: 18px;
+    }
   
-      .board-write-button {
-        right: 10px;
-        font-size: 20px;
-        padding: 8px 12px;
-      }
+    .board-write-button {
+      right: 10px;
+      font-size: 20px;
+      padding: 8px 12px;
     }
   }
 }
