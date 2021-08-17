@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Comment from '../comment/comment';
 
-const BoardContent = ({props}) => {
-
+const BoardContent = ({AddCommentItem}) => {
+  
   const location = useLocation();
+  const {id, title, userId, createdAt, content, comments} = location.state.item;
+  
+  const inputRef = useRef();
 
-  const {title, userId, createdAt, content, comments} = location.state.item;
+  const [ Comments, setComments ] = useState(comments);
+
+
+  const handleClick = (e) => {
+    // 나중에는 submit 시에도 적용.
+    e.preventDefault();
+
+    const comment = inputRef.current.value;
+
+    if(!comment) {
+      alert('내용을 입력해주세요!!');
+      return;
+    }
+
+    const new_comment = {
+      id: Date.now().toString(),
+      username: userId,
+      message: inputRef.current.value,
+      createdAt: calc_date(),
+    }
+
+    const updated = AddCommentItem(new_comment, id);
+    setComments(updated);
+
+    inputRef.current.value = '';
+  }
 
   return (
     <article className="board-content">
@@ -31,22 +59,20 @@ const BoardContent = ({props}) => {
         <div>
           <ul>
             {
-              comments &&
-              comments.map(comment => (
+              Comments &&
+              Comments.map(comment => (
                 <Comment key={comment.id} item={comment}/>
               ))
             }
-
-            
           </ul>
         </div>
 
         <form className="board-content-form" action="/" method="POST">
-          <input type="text" placeholder="댓글을 입력하세요."/>
-          <button type="submit">등록</button>
-        </form>
+          <input ref={inputRef} type="text" placeholder="댓글을 입력하세요."/>
 
-        
+          {/* 나중에는 onSubmit으로 수정해야 할 듯. */}
+          <button onClick={handleClick} type="submit">등록</button>
+        </form>
 
       </section>
     </article>
@@ -54,3 +80,15 @@ const BoardContent = ({props}) => {
 }
 
 export default BoardContent;
+
+function calc_date () {
+  const date = new Date();
+
+  const mm = date.getMonth() + 1; // getMonth() is zero-based
+  const dd = date.getDate();
+
+  return [date.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+  ].join('-');
+}

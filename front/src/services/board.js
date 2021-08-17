@@ -198,12 +198,37 @@ class BoardClass {
     },
   ]
 
+  board_top = { 
+    id: 999,
+    title: '제목',
+    userId: '글쓴이',
+    createdAt: '작성일',
+    supervisor: true,
+  }
+
   add_board (item) {
     this.board_items.unshift(item);
   }
 
   get_board() {
     return this.board_items;
+  }
+
+  add_comment (comment, id) {
+    const select = this.board_items.find((item) => {
+      if(id === item.id) {
+        return item;
+      }
+    });
+
+    // 댓글이 없을 때, comments 배열 생성.
+    if(!select.comments) {
+      select.comments = new Array();
+    }
+
+    select.comments.push(comment);
+
+    return select.comments;
   }
 }
 

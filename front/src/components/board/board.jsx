@@ -6,7 +6,7 @@ import BoardContent from '../board-content/board-content';
 import { useHistory } from 'react-router-dom';
 
 
-const Board = ({board, boardTop, content, write, AddBoardItem}) => {
+const Board = ({board, boardTop, content, write, AddBoardItem, AddCommentItem}) => {
 
   const history = useHistory();
 
@@ -29,7 +29,7 @@ const Board = ({board, boardTop, content, write, AddBoardItem}) => {
 
             {/* 게시판 글 내용 */}
             { (!write && content) && 
-              <BoardContent/>
+              <BoardContent AddCommentItem={AddCommentItem}/>
             }
 
             {/* 게시판 글 쓰기 */}
