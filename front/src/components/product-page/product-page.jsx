@@ -4,8 +4,6 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const ProductPage = ({item}) => {
 
-  console.log(item);
-
   const {name, sub_title, thumbnail, price_info, imgs} = item;
 
   return (
@@ -17,32 +15,39 @@ const ProductPage = ({item}) => {
           <section className="product-page">
             <h1 className="visually-hidden" aria-hidden>product page</h1>
 
-            <img className="product-page-thumbnail" src={thumbnail} alt="상품 이미지" />
 
-            <div className="product-page-item-info">
-              <h2 className="sub-title">{sub_title}</h2>
-              <h1 className="title">{name}</h1>
-              <span className="price">{price_info.text}</span>
+            <div className="product-page-thumbnail">
+              <img src={thumbnail} alt="상품 이미지" />
             </div>
 
-            <dl className="product-page-brand-info">
-              <p className="info-container">
-                <dt>브랜드</dt>
-                <dd>아침의 농장</dd>
-              </p>
+            <div>
+              <div className="product-page-item-info">
+                <h2 className="sub-title">{sub_title}</h2>
+                <h1 className="title">{name}</h1>
+                <span className="price">{price_info.text}</span>
+              </div>
 
-              <p className="info-container">
-                <dt>배송료</dt>
-                <dd>기본 3,000원 / 도서산간지역 5,000원</dd>
-              </p>
+              <dl className="product-page-brand-info">
+                <p className="info-container">
+                  <dt>브랜드</dt>
+                  <dd>아침의 농장</dd>
+                </p>
 
-              <p className="info-container">
-                <dt>원산지</dt>
-                <dd>각 상품별 상세설명 참조</dd>
-              </p>
-            </dl>
+                <p className="info-container">
+                  <dt>배송료</dt>
+                  <dd>기본 3,000원 / 도서산간지역 5,000원</dd>
+                </p>
 
-            <article className="product-page-images">
+                <p className="info-container">
+                  <dt>원산지</dt>
+                  <dd>각 상품별 상세설명 참조</dd>
+                </p>
+              </dl>
+            </div>
+            
+          </section>
+
+          <main className="product-detail">
               <h2>상품 이미지들</h2>
               <ul>
               {
@@ -57,9 +62,7 @@ const ProductPage = ({item}) => {
                 })
               }
             </ul>
-            </article>
-            
-          </section>
+            </main>
 
           {/* for mobile buy button */}
           {/* <aside className="sm-only">
