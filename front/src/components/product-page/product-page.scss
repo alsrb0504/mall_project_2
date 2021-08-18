@@ -1,0 +1,67 @@
+.product-page {
+  $sm-image-size: 340px;
+  $md-image-size: 680px;
+
+  $sm-padding-top: 30px;
+
+  padding: $sm-padding-top 0;
+
+  // 현재 상세페이지의 img들도 적용 중, 나중에 수정할 때 참조.
+  &-thumbnail,
+  img {
+    width: 100%;
+    height: $sm-image-size;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  &-item-info {
+    // background-color: skyblue;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $border;
+
+    .sub-title {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .title {
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &-brand-info {
+    font-size: 14px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $border;
+
+    .info-container {
+      @include flexbox(start);
+      margin-bottom: 8px;
+
+      dt {
+        display: inline-block;
+        width: 70px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-images {
+    h2{
+      padding: 16px 0;
+
+    }
+  }
+
+  
+}
+

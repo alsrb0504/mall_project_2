@@ -4,10 +4,13 @@ import ProductList from './components/product-list/product-list';
 import Board from './components/board/board';
 import Footer from './components/footer/footer';
 
+import ProductPage from './components/product-page/product-page';
+
+
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import './styles/main.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 
@@ -45,6 +48,12 @@ function App({ boardClass, product_class }) {
         <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
           <Switch>
+            <Route path="/product/:item" >
+              {/* 나중에 item 주입 방법 수정 */}
+              <ProductPage  item={product_class.product_list[0]}/>
+            </Route>
+
+
             {/* 글쓰기시 */}
             <Route path="/board/write" exact >
               <Board board={board} write={true} boardTop={boardClass.board_top}  AddBoardItem={AddBoardItem}  />
