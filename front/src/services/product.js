@@ -16,7 +16,7 @@ class Product {
       price_info: {
         text: '5kg 당 16,900',
         unit: 3,
-        price: 24900,
+        price: 16900,
       },
       imgs: [
         '/images/product01/pic01.jpg',
@@ -34,7 +34,7 @@ class Product {
       price_info: {
         text: '6kg 당 20,900',
         unit: 3,
-        price: 24900,
+        price: 20900,
       },
       imgs: [
         '/images/product02/pic01.jpg',
@@ -52,7 +52,7 @@ class Product {
       price_info: {
         text: '3kg 당 24,500',
         unit: 3,
-        price: 24900,
+        price: 24500,
       },
       imgs: [
         '/images/product03/pic01.jpg',
