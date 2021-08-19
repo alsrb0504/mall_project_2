@@ -3,20 +3,24 @@
   $md-image-size: 680px;
 
   $sm-padding-top: 30px;
+  $lg-padding-top: 60px;
 
   padding: $sm-padding-top 0;
 
-  // 현재 상세페이지의 img들도 적용 중, 나중에 수정할 때 참조.
-  &-thumbnail,
-  img {
-    width: 100%;
-    height: $sm-image-size;
-    object-fit: cover;
+  background-color: $white;
+
+  &-thumbnail {
     margin-bottom: 16px;
+    
+    img {
+      width: 100%;
+      height: $sm-image-size;
+      object-fit: cover;
+
+    }
   }
 
   &-item-info {
-    // background-color: skyblue;
     padding-bottom: 8px;
     margin-bottom: 16px;
     border-bottom: 1px solid $border;
@@ -55,13 +59,140 @@
     }
   }
 
-  &-images {
-    h2{
-      padding: 16px 0;
-
+  @include responsive(T) {
+    &-thumbnail,
+    img {
+      height: $md-image-size;
     }
   }
 
-  
+  @include responsive(D) {
+    @include flexbox;
+    padding-top: $lg-padding-top;
+
+    &-thumbnail {
+      height: 480px;
+      flex-basis: 55%;
+      text-align: center;
+
+      img {
+        width: 480px;
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+
+    &-buy-part {
+      padding-top: 48px;
+      flex-basis: 35%;
+
+      .product-page-form {
+        padding: 24px 0px 0px 50px;
+      }
+    }
+
+    &-form {
+      font-size: 14px;
+      
+      .form-product-info {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      
+      .form-count {
+        @include flexbox(between);
+        padding-bottom: 16px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid $black;
+
+        .count-container {
+          @include flexbox(between);
+          width: 100px;
+          height: 24px;;
+
+          .count {
+            font-size: 20px;
+          }
+
+          .ic-count-button{
+            font-size: 12px; 
+            padding: 4px 5px;
+            border: 1px solid $black;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+            
+            &:hover {
+              opacity: 0.5;
+              transform: scale(1.02);
+            }
+          }
+        }
+
+        .price {
+          height: 100%;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+
+      .form-result {
+        @include flexbox(end);
+        margin-bottom: 16px;
+
+        span {
+          @include flexbox(cneter, end);
+          height: 18px;
+          font-size: 14px;
+          margin-right: 8px;
+        }
+
+        strong {
+          color: $border-hover;
+          font-size: 18px;
+        }
+      }
+
+      .form-button {
+        @include flexbox;
+        height: 48px;
+        background-color: $border-hover;
+        border-radius: 4px;
+        transition: opacity 100ms ease-in-out;
+
+        &:hover,
+        &:active {
+          opacity: 0.8;
+        }
+
+        button {
+          color: $white;
+          width: 100%;
+          height: 100%;
+          font-weight: 700;
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
 
+// 상세 페이지 구현할 계획이면 따로 빼야 함.
+.product-detail {
+  h2{
+    padding: 16px 0;
+  }
+
+  img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    margin-bottom: 16px;
+  }
+
+  @include responsive(T) {
+    img {
+      height: 680px;
+    }
+  }
+}

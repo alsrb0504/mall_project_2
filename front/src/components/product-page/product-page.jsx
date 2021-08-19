@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const ProductPage = ({item}) => {
 
@@ -20,7 +20,7 @@ const ProductPage = ({item}) => {
               <img src={thumbnail} alt="상품 이미지" />
             </div>
 
-            <div>
+            <div className="product-page-buy-part">
               <div className="product-page-item-info">
                 <h2 className="sub-title">{sub_title}</h2>
                 <h1 className="title">{name}</h1>
@@ -43,7 +43,44 @@ const ProductPage = ({item}) => {
                   <dd>각 상품별 상세설명 참조</dd>
                 </p>
               </dl>
+
+              {/* 데스크탑 화면에서만 출력 */}
+              <form className="product-page-form lg-only" action="" method="POST">
+                <h3 className="visually-hidden" aria-hidden>데스크탑 상품 구매 폼</h3>
+
+                <span className="form-product-info">{name} {price_info.unit}kg</span>
+
+                <div className="form-count">
+                  <section className="count-container">
+                    <span className="ic-count-button" >
+                      <FontAwesomeIcon icon={faMinus} />
+                    </span>
+                    {/* 나중에 버튼 클릭시마다 바뀜. */}
+                    <span className="count">1</span>
+
+                    <span className="ic-count-button" >
+                      <FontAwesomeIcon icon={faPlus} />
+                    </span>
+
+                  </section>
+                  <div className="price">{PriceToText(price_info.price)}원</div>
+                </div>
+
+                
+                <p className="form-result">
+                  <span>총 상품금액</span>
+                  <strong>{PriceToText(price_info.price)}원</strong>
+                  {/* 함수로 구현해서 나중에 단위당 가격 변동 */}
+                  
+                </p>
+
+                <div className="form-button">
+                  <button className="submit-button" type="submit">바로구매</button>
+                </div>
+              </form>
             </div>
+
+            
             
           </section>
 
@@ -81,3 +118,19 @@ const ProductPage = ({item}) => {
 }
 
 export default ProductPage;
+
+function PriceToText (price) {
+  let text = price.toString(10);
+
+  const length = text.length;
+
+  if(length === 5) {
+    text = text.slice(0, 2) + ',' + text.slice(text.length-3);
+  } else if (length === 6) {
+    text = text.slice(0, 3) + ',' + text.slice(text.length-3);
+  } else {
+    throw new Error(`product-page Error : ${price} value error!!`)
+  }
+
+  return text;
+}
