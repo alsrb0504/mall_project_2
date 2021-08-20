@@ -1,10 +1,33 @@
-import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import React, { useRef, useState } from 'react';
 
 const ProductPage = ({item}) => {
 
+  const [ count, setCount ] = useState(1);
+
+  const priceRef = useRef();
+  const resultRef = useRef();
+
   const {name, sub_title, thumbnail, price_info, imgs} = item;
+
+  const Increase_Count = () => {
+    const updated = count + 1;
+    setCount(updated);
+
+    Update_Price(updated);
+  }
+
+  const Decrease_Count = () => {
+    const updated = ((count - 1 < 1) ? 1 : count - 1);
+    setCount(updated);
+
+    Update_Price(updated);
+  }
+
+  const Update_Price = (num) => {
+    const price = PriceToText(num * price_info.price);
+    priceRef.current.textContent = price + '원';
+    resultRef.current.textContent = price + '원';
+  }
 
   return (
     
@@ -52,24 +75,34 @@ const ProductPage = ({item}) => {
 
                 <div className="form-count">
                   <section className="count-container">
-                    <span className="ic-count-button" >
-                      <FontAwesomeIcon icon={faMinus} />
-                    </span>
-                    {/* 나중에 버튼 클릭시마다 바뀜. */}
-                    <span className="count">1</span>
+                    <div 
+                      className="count-button" 
+                      onClick={Increase_Count}
+                    >
+                      <img src="/buttons/plus-button.svg" alt="plus-button" />
+                    </div>
 
-                    <span className="ic-count-button" >
-                      <FontAwesomeIcon icon={faPlus} />
+                    <span className="count">
+                      {count}
                     </span>
+
+                    <div 
+                      className="count-button"
+                      onClick={Decrease_Count}
+                    >
+                      <img src="/buttons/minus-button.svg" alt="minus-button" />
+                    </div>
 
                   </section>
-                  <div className="price">{PriceToText(price_info.price)}원</div>
+                  <div ref={priceRef} className="price">
+                    {PriceToText(price_info.price)}원
+                  </div>
                 </div>
 
                 
                 <p className="form-result">
                   <span>총 상품금액</span>
-                  <strong>{PriceToText(price_info.price)}원</strong>
+                  <strong ref={resultRef}>{PriceToText(price_info.price)}원</strong>
                   {/* 함수로 구현해서 나중에 단위당 가격 변동 */}
                   
                 </p>
