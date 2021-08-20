@@ -20,7 +20,7 @@ const Header = () => {
                 
                 <h1 className="header-title" >
                   <Link to="/">
-                    과일 도매상
+                    청청과점
                   </Link>
                 </h1>
 

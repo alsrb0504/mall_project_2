@@ -13,7 +13,7 @@ const Footer = (props) => {
           <div className="col-sm-4">
 
             <div className="footer-container">
-              <h3 className="footer-title">사이트 이름</h3>
+              <h3 className="footer-title">청청과점</h3>
               <div className="footer-info">
                 <h4 className="footer-sub-title">ABOUT US</h4>
 
