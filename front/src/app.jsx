@@ -9,6 +9,7 @@ import Footer from './components/footer/footer';
 import ProductPage from './components/product-page/product-page';
 
 import './styles/main.scss';
+import Login from './components/login/login';
 
 function App({ boardClass, product_class }) {
 
@@ -50,6 +51,11 @@ function App({ boardClass, product_class }) {
 
 
             {/* 글쓰기시 */}
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+
+
             <Route path="/board/write" exact >
               <Board board={board} write={true} boardTop={boardClass.board_top}  AddBoardItem={AddBoardItem}  />
             </Route>
