@@ -79,9 +79,9 @@ const ProductPage = () => {
                   <section className="count-container">
                     <div 
                       className="count-button" 
-                      onClick={Increase_Count}
+                      onClick={Decrease_Count}
                     >
-                      <img src="/buttons/plus-button.svg" alt="plus-button" />
+                      <img src="/buttons/minus-button.svg" alt="minus-button" />
                     </div>
 
                     <span className="count">
@@ -90,9 +90,9 @@ const ProductPage = () => {
 
                     <div 
                       className="count-button"
-                      onClick={Decrease_Count}
+                      onClick={Increase_Count}
                     >
-                      <img src="/buttons/minus-button.svg" alt="minus-button" />
+                      <img src="/buttons/plus-button.svg" alt="plus-button" />
                     </div>
 
                   </section>
