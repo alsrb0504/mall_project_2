@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ProductPage = ({item}) => {
+const ProductPage = () => {
 
   const [ count, setCount ] = useState(1);
 
   const priceRef = useRef();
   const resultRef = useRef();
 
-  const {name, sub_title, thumbnail, price_info, imgs} = item;
+  const location = useLocation();
+  const {name, sub_title, thumbnail, price_info, imgs} = location.state;
 
   const Increase_Count = () => {
     const updated = count + 1;

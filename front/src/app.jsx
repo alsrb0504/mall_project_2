@@ -1,18 +1,14 @@
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { useState } from 'react';
+
 import Header from './components/header/header';
 import Carousel from './components/carousel/carousel';
 import ProductList from './components/product-list/product-list';
 import Board from './components/board/board';
 import Footer from './components/footer/footer';
-
 import ProductPage from './components/product-page/product-page';
 
-
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-
 import './styles/main.scss';
-import { useState } from 'react';
-
-
 
 function App({ boardClass, product_class }) {
 
@@ -49,8 +45,7 @@ function App({ boardClass, product_class }) {
 
           <Switch>
             <Route path="/product/:item" >
-              {/* 나중에 item 주입 방법 수정 */}
-              <ProductPage  item={product_class.product_list[0]}/>
+              <ProductPage />
             </Route>
 
 
@@ -66,7 +61,7 @@ function App({ boardClass, product_class }) {
             <Route path="/board" exact >
               <Board board={board} boardTop={boardClass.board_top}/>
 
-              {/* 광고 컴포넌트 또는 글쓰기 컴포넌트 하나 만들자. */}
+              {/* 나중에 광고 compoent 하나 추가 고려. */}
             </Route>
             <Route path="/">
               <Carousel product_class={product_class}/>
