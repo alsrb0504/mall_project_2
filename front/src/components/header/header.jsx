@@ -35,7 +35,9 @@ const Header = () => {
                       <Link to="/board" >문의 게시판</Link>
                     </li>
                     <li className="header-nav-item">
-                      <button className="login-button" type="button">로그인</button>
+                      <Link to='/login'>
+                        <button className="login-button" type="button">로그인</button>
+                      </Link>
                     </li>
                   </ul>
                 </nav>

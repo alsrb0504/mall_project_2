@@ -1,7 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Login = (props) => {
 
+  const history = useHistory();
+
+  const MoveToHome = () => {
+    history.push('/');
+  }
 
   return (
     <div className="login-page">
@@ -10,7 +16,7 @@ const Login = (props) => {
           <div className="col-sm-4">
 
             <main className="login">
-              <h1 className="login-title" >청청과점</h1>
+              <h1 onClick={MoveToHome} className="login-title" >청청과점</h1>
 
               <form className="login-form" action="" method="GET">
                 <div className="form-inputs">
