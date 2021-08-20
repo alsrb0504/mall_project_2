@@ -12,7 +12,6 @@ const CarouselItem = ({item}) => {
     });
   }
 
-
   const {name, sub_title, description, thumbnail, price_info} = item;
 
   return (
