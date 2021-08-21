@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, useLocation} from 'react-router-dom';
 import { useState } from 'react';
 
 import Header from './components/header/header';
@@ -42,15 +42,16 @@ function App({ boardClass, product_class }) {
       <BrowserRouter>
 
         <Header />
+
         <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
           <Switch>
-            <Route path="/product/:item" >
-              <ProductPage />
+            <Route path="/" exact>
+              <Carousel product_class={product_class}/>
+              <ProductList product_class={product_class}/>
             </Route>
 
-
-            {/* 글쓰기시 */}
+            {/* 로그인 */}
             <Route path="/login" exact>
               <Login />
             </Route>
@@ -66,13 +67,13 @@ function App({ boardClass, product_class }) {
 
             <Route path="/board" exact >
               <Board board={board} boardTop={boardClass.board_top}/>
-
               {/* 나중에 광고 compoent 하나 추가 고려. */}
             </Route>
-            <Route path="/">
-              <Carousel product_class={product_class}/>
-              <ProductList product_class={product_class}/>
+
+            <Route path="/product/:item" >
+              <ProductPage />
             </Route>
+            
           </Switch>
 
         </main>

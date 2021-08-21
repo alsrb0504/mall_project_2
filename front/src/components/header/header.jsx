@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Header = () => {
+const Header = memo(() => {
+  const location = useLocation();
 
+  const Active = () => {
+    if(location.pathname.includes('/board')) {
+      return (
+        <>
+          <li className="header-nav-item">
+            <Link to="/">제품 소개</Link>
+          </li>
+          <li className="header-nav-item is-active">
+            <Link to="/board" >문의 게시판</Link>
+          </li>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <li className="header-nav-item is-active">
+            <Link to="/">제품 소개</Link>
+          </li>
+          <li className="header-nav-item">
+            <Link to="/board" >문의 게시판</Link>
+          </li>
+        </>
+      )
+    }
+  }
 
   return(
       <header>
@@ -13,7 +39,8 @@ const Header = () => {
             <div className="col-sm-4">
               
               <div className="header">
-                  {/* 모바일 */}
+                {/* 모바일 */}
+                {/* 아이콘 로그인 버튼으로 수정 */}
                 <button className="icon-button sm-only ">
                   <FontAwesomeIcon icon={faBars} className="ic-bar" />
                 </button>
@@ -23,17 +50,14 @@ const Header = () => {
                     청청과점
                   </Link>
                 </h1>
-
+                
                 <nav className="header-nav sm-hidden">
-                  {/* h1 헤더 nav 숨길 것 */}
                   <h1 className="visually-hidden">헤더 nav</h1> 
+
                   <ul className="header-nav-list" >
-                    <li className="header-nav-item is-active">
-                      <a href="/">제품 소개</a>
-                    </li>
-                    <li className="header-nav-item">
-                      <Link to="/board" >문의 게시판</Link>
-                    </li>
+                    {
+                      Active()
+                    }
                     <li className="header-nav-item">
                       <Link to='/login'>
                         <button className="login-button" type="button">로그인</button>
@@ -41,7 +65,6 @@ const Header = () => {
                     </li>
                   </ul>
                 </nav>
-
                 <button className="icon-button sm-only ">
                   <FontAwesomeIcon icon={faSearch} className="ic-search" />
                 </button>
@@ -52,6 +75,7 @@ const Header = () => {
         </div>
       </header>
     )
-  };
+  }
+)
 
 export default Header;
