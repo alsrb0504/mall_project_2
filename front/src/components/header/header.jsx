@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardList, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory, useLocation } from 'react-router-dom';
+
 
 const Header = memo(() => {
   const location = useLocation();
@@ -11,6 +12,9 @@ const Header = memo(() => {
     history.push('/login');
   }
 
+  const MoveBoard = () => {
+    history.push('/board');
+  }
 
   const Active = () => {
     if(location.pathname.includes('/board')) {
@@ -47,8 +51,8 @@ const Header = memo(() => {
               <div className="header">
                 {/* 모바일 */}
                 {/* 아이콘 로그인 버튼으로 수정 */}
-                <button className="icon-button sm-only ">
-                  <FontAwesomeIcon icon={faBars} className="ic-bar" />
+                <button onClick={MoveBoard} className="icon-button sm-only ">
+                  <FontAwesomeIcon icon={faClipboardList} className="ic-bar" />
                 </button>
                 
                 <h1 className="header-title" >
