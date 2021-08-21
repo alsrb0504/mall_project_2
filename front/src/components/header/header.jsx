@@ -1,10 +1,16 @@
 import React, { memo } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link, useLocation } from 'react-router-dom';
+import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 const Header = memo(() => {
   const location = useLocation();
+  const history = useHistory();
+
+  const MoveLogin = () => {
+    history.push('/login');
+  }
+
 
   const Active = () => {
     if(location.pathname.includes('/board')) {
@@ -65,8 +71,8 @@ const Header = memo(() => {
                     </li>
                   </ul>
                 </nav>
-                <button className="icon-button sm-only ">
-                  <FontAwesomeIcon icon={faSearch} className="ic-search" />
+                <button onClick={MoveLogin} className="icon-button sm-only ">
+                  <FontAwesomeIcon icon={faUser} className="ic-user" />
                 </button>
               </div>
 
