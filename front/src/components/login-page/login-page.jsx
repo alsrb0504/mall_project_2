@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { Switch, useLocation } from 'react-router-dom';
+import React from 'react';
 import LoginNew from '../login-new/login-new';
 import Login from '../login/login';
-import { Route } from 'react-router';
 
 const LoginPage = ({join}) => {
 

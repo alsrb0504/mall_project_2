@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch, Route, useLocation, useHistory} from 'react-router-dom';
+import {BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 import Header from './components/header/header';
