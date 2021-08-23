@@ -2,13 +2,18 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import LoginOthers from '../login-others/login-others';
 
-const Login = (props) => {
+const Login = () => {
 
   const history = useHistory();
 
   const MoveToHome = () => {
     history.push('/');
   }
+
+  const MoveToJoin = () => {
+    history.push('/login/join')
+  }
+  
 
   return (
     <main className="login">
@@ -22,7 +27,7 @@ const Login = (props) => {
 
         <div className="login-form-buttons">
           <button className="login-button">로그인</button>
-          <button className="join-button">회원가입</button>
+          <button onClick={MoveToJoin} className="join-button">회원가입</button>
         </div>
       </form>
 

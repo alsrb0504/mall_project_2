@@ -1,4 +1,4 @@
-import {BrowserRouter, Switch, Route, useLocation} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, useLocation, useHistory} from 'react-router-dom';
 import { useState } from 'react';
 
 import Header from './components/header/header';
@@ -12,6 +12,10 @@ import './styles/main.scss';
 import LoginPage from './components/login-page/login-page';
 
 function App({ boardClass, product_class }) {
+
+
+  // const location = useLocation();
+  // const history = useHistory();
 
   const [ board, setBoard ] = useState(boardClass.get_board());
 
@@ -55,6 +59,11 @@ function App({ boardClass, product_class }) {
             <Route path="/login" exact>
               <LoginPage />
             </Route>
+
+            {/* 회원가입 */}
+            <Route path="/login/join" exact>
+              <LoginPage join={true} />
+            </Route>/
 
 
             <Route path="/board/write" exact >

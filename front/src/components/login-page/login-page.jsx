@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Switch, useLocation } from 'react-router-dom';
 import LoginNew from '../login-new/login-new';
 import Login from '../login/login';
+import { Route } from 'react-router';
 
+const LoginPage = ({join}) => {
 
-const LoginPage = (props) => {
 
   return (
     <div className="login-page">
       <div className="container">
         <div className="row">
           <div className="col-sm-4">
-
-            {/* <Login /> */}
-
-            <LoginNew />
-
+            {
+              !join && <Login />
+            }
+            {
+              join && <LoginNew />
+            }
           </div>
         </div>
       </div>

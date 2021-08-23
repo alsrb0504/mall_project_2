@@ -1,8 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import LoginOthers from '../login-others/login-others';
 
 const LoginNew = (props) => {
 
+  const history = useHistory();
+
+  const handelCancel = () => {
+    history.push('/login');
+  }
 
   return (
     <main className="login-new">
@@ -38,7 +44,7 @@ const LoginNew = (props) => {
 
         <div className="button-container">
           <button className="submit-button" type="submit">회원가입</button>
-          <button className="cancel-button" type="button">취소</button>
+          <button onClick={handelCancel} className="cancel-button" type="button">취소</button>
         </div>
       </form>
 
