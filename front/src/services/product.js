@@ -16,7 +16,7 @@ class Product {
       price_info: {
         text: '5kg 당 16,900',
         unit: 3,
-        price: 24900,
+        price: 16900,
       },
       imgs: [
         '/images/product01/pic01.jpg',
@@ -27,12 +27,12 @@ class Product {
     },
     {
       id: 2,
-      name: '달콤한 수박',
-      sub_title: '농장에서 바로온 꿀수박',
+      name: '유기농 바나나',
+      sub_title: '국내산 무농약 제주바나나',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, non magni atque odit inventore iure assumenda sequi! Amet, reprehenderit voluptate sunt similique illo voluptatum itaque quas. Sit, doloremque ab nobis, aliquam dignissimos repudiandae vero porro quisquam,',
       thumbnail: '/images/product02/pic01.jpg',
       price_info: {
-        text: '6kg 당 20,900',
+        text: '3kg 당 24,900',
         unit: 3,
         price: 24900,
       },
@@ -43,6 +43,7 @@ class Product {
         '/images/product02/pic04.jpg',
       ]
     },
+
     {
       id: 3,
       name: '신선한 포도',
@@ -52,7 +53,7 @@ class Product {
       price_info: {
         text: '3kg 당 24,500',
         unit: 3,
-        price: 24900,
+        price: 24500,
       },
       imgs: [
         '/images/product03/pic01.jpg',
@@ -63,14 +64,14 @@ class Product {
     },
     {
       id: 4,
-      name: '유기농 바나나',
-      sub_title: '국내산 무농약 제주바나나',
+      name: '달콤한 수박',
+      sub_title: '농장에서 바로온 꿀수박',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, non magni atque odit inventore iure assumenda sequi! Amet, reprehenderit voluptate sunt similique illo voluptatum itaque quas. Sit, doloremque ab nobis, aliquam dignissimos repudiandae vero porro quisquam,',
       thumbnail: '/images/product04/pic01.jpg',
       price_info: {
-        text: '3kg 당 24,900',
+        text: '6kg 당 20,900',
         unit: 3,
-        price: 24900,
+        price: 20900,
       },
       imgs: [
         '/images/product04/pic01.jpg',
@@ -78,9 +79,8 @@ class Product {
         '/images/product04/pic03.jpg',
         '/images/product04/pic04.jpg',
       ]
-    }
+    },
   ]
-
 }
 
 export default Product;

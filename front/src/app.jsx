@@ -1,17 +1,21 @@
+import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useState } from 'react';
+
 import Header from './components/header/header';
 import Carousel from './components/carousel/carousel';
 import ProductList from './components/product-list/product-list';
 import Board from './components/board/board';
 import Footer from './components/footer/footer';
-
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import ProductPage from './components/product-page/product-page';
 
 import './styles/main.scss';
-import { useEffect, useState } from 'react';
-
-
+import LoginPage from './components/login-page/login-page';
 
 function App({ boardClass, product_class }) {
+
+
+  // const location = useLocation();
+  // const history = useHistory();
 
   const [ board, setBoard ] = useState(boardClass.get_board());
 
@@ -42,10 +46,26 @@ function App({ boardClass, product_class }) {
       <BrowserRouter>
 
         <Header />
+
         <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
           <Switch>
-            {/* 글쓰기시 */}
+            <Route path="/" exact>
+              <Carousel product_class={product_class}/>
+              <ProductList product_class={product_class}/>
+            </Route>
+
+            {/* 로그인 */}
+            <Route path="/login" exact>
+              <LoginPage />
+            </Route>
+
+            {/* 회원가입 */}
+            <Route path="/login/join" exact>
+              <LoginPage join={true} />
+            </Route>/
+
+
             <Route path="/board/write" exact >
               <Board board={board} write={true} boardTop={boardClass.board_top}  AddBoardItem={AddBoardItem}  />
             </Route>
@@ -56,13 +76,13 @@ function App({ boardClass, product_class }) {
 
             <Route path="/board" exact >
               <Board board={board} boardTop={boardClass.board_top}/>
+              {/* 나중에 광고 compoent 하나 추가 고려. */}
+            </Route>
 
-              {/* 광고 컴포넌트 또는 글쓰기 컴포넌트 하나 만들자. */}
+            <Route path="/product/:item" >
+              <ProductPage />
             </Route>
-            <Route path="/">
-              <Carousel product_class={product_class}/>
-              <ProductList product_class={product_class}/>
-            </Route>
+            
           </Switch>
 
         </main>

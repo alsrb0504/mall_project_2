@@ -17,9 +17,13 @@
     }
 
     .ic-bar,
-    .ic-search {
+    .ic-user {
       font-size: 25px;
       font-weight: 100;
+    }
+    
+    .ic-user {
+      color: $border-hover;
     }
   }
 

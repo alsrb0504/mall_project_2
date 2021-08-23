@@ -1,0 +1,69 @@
+.carousel-slider-item {
+  $border-size: 1px;
+  $mobile-image-size: 300px;
+  $tablit-imgae-size: 500px - ($border-size * 2);
+
+  width:100%;
+
+  img {
+    width: 100%;
+    height: $mobile-image-size;
+    object-fit: cover;
+    margin-bottom: 6px;
+  }
+
+  .item-text{
+    margin-bottom: 10px;
+
+    strong {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .sub-title {
+      display: block;
+      font-size: 14px;
+    }
+  }
+
+  @include responsive(T) {
+    display: inline-flex !important;  // .tns-slider give display: inline-block
+
+
+
+    img {
+      width: 60%;
+      height: $tablit-imgae-size;
+      margin-bottom: 0;
+    }
+    
+
+    .item-text {
+      @include column-flexbox(center, start);
+      width:40%;
+      height: 100%;
+      padding: 0 50px;
+      margin-bottom: 0;
+
+      strong {
+        font-size: 26px;
+        line-height: 32px;
+        padding-top: 60px;
+        padding-bottom: 25px;
+      }
+
+      .sub-title{
+        margin-bottom: 9px;
+      }
+
+      .slider-description  {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+      }
+      
+    }
+  }
+}
