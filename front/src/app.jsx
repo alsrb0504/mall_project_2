@@ -9,7 +9,7 @@ import Footer from './components/footer/footer';
 import ProductPage from './components/product-page/product-page';
 
 import './styles/main.scss';
-import Login from './components/login/login';
+import LoginPage from './components/login-page/login-page';
 
 function App({ boardClass, product_class }) {
 
@@ -53,7 +53,7 @@ function App({ boardClass, product_class }) {
 
             {/* 로그인 */}
             <Route path="/login" exact>
-              <Login />
+              <LoginPage />
             </Route>
 
 
