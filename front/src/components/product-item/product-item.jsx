@@ -8,9 +8,6 @@ const ProductItem = ({item}) => {
   const history = useHistory();
 
   const handleClick = () => {
-
-    console.log('hi');
-
     history.push({
       pathname: '/product/item',
       state: item,

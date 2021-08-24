@@ -78,12 +78,14 @@ const Header = memo(({auth}) => {
                     
                     <li className="header-nav-item">
                     {
+                      // 로그인한 유저가 없을 때,
                       !auth.cur_user &&
                       <Link to='/login'>
                         <button className="login-button" type="button">로그인</button>
                       </Link>
                     }
                     {
+                      // 로그인한 유저가 있을 때,
                       auth.cur_user && 
                       <Link to='/'>
                         <button onClick={handleLogout} className="login-button" type="button">로그아웃</button>
