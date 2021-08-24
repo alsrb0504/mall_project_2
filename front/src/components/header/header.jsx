@@ -1,10 +1,13 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboardList, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
 
-const Header = memo(() => {
+const Header = memo(({auth}) => {
+
+  // const [ loginState, setLoginState ] = useState(login_state);
+
   const location = useLocation();
   const history = useHistory();
 
@@ -42,6 +45,9 @@ const Header = memo(() => {
     }
   }
 
+  const handleLogout = () => {
+    auth.Logout();
+  }
   return(
       <header>
         <div className="container">
@@ -68,10 +74,21 @@ const Header = memo(() => {
                     {
                       Active()
                     }
+
+                    
                     <li className="header-nav-item">
+                    {
+                      !auth.cur_user &&
                       <Link to='/login'>
                         <button className="login-button" type="button">로그인</button>
                       </Link>
+                    }
+                    {
+                      auth.cur_user && 
+                      <Link to='/'>
+                        <button onClick={handleLogout} className="login-button" type="button">로그아웃</button>
+                      </Link>
+                    }
                     </li>
                   </ul>
                 </nav>

@@ -31,7 +31,17 @@ const Login = ({auth}) => {
 
     if(login_result) {
       console.log('로그인 성공', login_result);
-      history.push('/')
+      history.push('/');
+
+      console.log(auth.cur_user);
+
+      // history.push({
+      //   pathname: '/',
+      //   state: {
+      //     user: login_result.id,
+      //   }
+      // })
+
     } else {
       alert('ID 또는 비밀번호를 확인하세요!!');
       IDRef.current.value ="";

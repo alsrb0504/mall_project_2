@@ -41,7 +41,7 @@ function App({ boardClass, product_class, auth }) {
 
       <BrowserRouter>
 
-        <Header />
+        <Header auth={auth} />
 
         <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
