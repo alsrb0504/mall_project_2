@@ -15,7 +15,9 @@ class UserDB {
     }
   ]
 
-
+  CreateUser = (new_user_info) => {
+    this.user_info.push(new_user_info);
+  }
   
 }
 

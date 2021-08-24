@@ -2,10 +2,9 @@ import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import LoginOthers from '../login-others/login-others';
 
-import Auth from '../../services/auth';
-const auth = new Auth();
 
-const Login = () => {
+
+const Login = ({auth}) => {
 
   const history = useHistory();
 
