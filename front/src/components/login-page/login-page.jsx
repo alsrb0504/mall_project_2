@@ -2,11 +2,7 @@ import React from 'react';
 import LoginNew from '../login-new/login-new';
 import Login from '../login/login';
 
-import Auth from '../../services/auth';
-const auth = new Auth();
-
-const LoginPage = ({join}) => {
-
+const LoginPage = ({join, auth}) => {
 
   return (
     <div className="login-page">
