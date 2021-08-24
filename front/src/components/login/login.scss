@@ -41,6 +41,11 @@
         &:hover {
           background-color: $login-input-hover;
         }
+
+        &::placeholder {
+          font-weight: 700;
+          color: $login-input-placeholder;
+        }
       }
     }
 

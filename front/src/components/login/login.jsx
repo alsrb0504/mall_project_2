@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import LoginOthers from '../login-others/login-others';
+
+import Auth from '../../services/auth';
+const auth = new Auth();
 
 const Login = () => {
 
   const history = useHistory();
+
+  const IDRef = useRef();
+  const passwordRef = useRef();
 
   const MoveToHome = () => {
     history.push('/');
@@ -14,6 +20,25 @@ const Login = () => {
     history.push('/login/join')
   }
   
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const login_info = {
+      id: IDRef.current.value,
+      password: passwordRef.current.value,
+    }
+    
+    const login_result = auth.Login(login_info);
+
+    if(login_result) {
+      console.log('로그인 성공', login_result);
+      history.push('/')
+    } else {
+      alert('ID 또는 비밀번호를 확인하세요!!');
+      IDRef.current.value ="";
+      passwordRef.current.value ="";
+    }
+  }
 
   return (
     <main className="login">
@@ -21,12 +46,18 @@ const Login = () => {
 
       <form className="login-form" action="" method="GET">
         <div className="form-inputs">
-          <input type="text" placeholder="아이디"/>
-          <input type="password" placeholder="비밀번호" />
+          <input ref={IDRef} type="text" placeholder="아이디" required />
+          <input ref={passwordRef} type="password" placeholder="비밀번호" required />
         </div>
 
         <div className="login-form-buttons">
-          <button className="login-button">로그인</button>
+          <button 
+            onClick={handleLogin}
+            className="login-button"
+            type="submit" 
+          >
+            로그인
+          </button>
           <button onClick={MoveToJoin} className="join-button">회원가입</button>
         </div>
       </form>
