@@ -15,7 +15,7 @@ const Login = ({auth}) => {
     history.push('/');
   }
 
-  const MoveToJoin = () => {
+const MoveToJoin = () => {
     history.push('/login/join')
   }
   
