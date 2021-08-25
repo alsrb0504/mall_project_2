@@ -24,7 +24,7 @@ const ProductItem = ({item}) => {
             {price_info.unit}kg 당
           </span>
           <span className="price">
-            {price_info.price}원
+            {PriceToText(price_info.price)}원
           </span>
         </div>
       </div>
@@ -33,3 +33,19 @@ const ProductItem = ({item}) => {
 }
 
 export default ProductItem;
+
+function PriceToText (price) {
+  let text = price.toString(10);
+
+  const length = text.length;
+
+  if(length === 5) {
+    text = text.slice(0, 2) + ',' + text.slice(text.length-3);
+  } else if (length === 6) {
+    text = text.slice(0, 3) + ',' + text.slice(text.length-3);
+  } else {
+    throw new Error(`product-page Error : ${price} value error!!`)
+  }
+
+  return text;
+}
