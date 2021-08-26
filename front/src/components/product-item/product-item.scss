@@ -1,5 +1,6 @@
 .product-item {
-  padding: 8px 0;
+  box-shadow: 0px 4px 9px 5px #CECECE;
+  margin: 20px 0;
 
   img {
     width: 100%;
@@ -30,8 +31,11 @@
   }
 
   @include responsive(T) {
-    // width: 22%;
-    padding: 15px 10px 15px 10px;
-    flex-basis: 25%;
+    
+    flex-basis: 24%;
+
+    img {
+      height: 150px;
+    }
   }
 }

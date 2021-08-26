@@ -5,8 +5,10 @@ const ProductPage = () => {
 
   const [ count, setCount ] = useState(1);
 
-  const priceRef = useRef();
+
+  const buyFormRef = useRef();
   const resultRef = useRef();
+  const overlayRef = useRef();
 
   const location = useLocation();
   const {name, sub_title, thumbnail, price_info, imgs} = location.state;
@@ -27,8 +29,17 @@ const ProductPage = () => {
 
   const Update_Price = (num) => {
     const price = PriceToText(num * price_info.price);
-    priceRef.current.textContent = price + '원';
     resultRef.current.textContent = price + '원';
+  }
+
+  const MobileBuyButton = () => {
+    buyFormRef.current.classList.add('is-active');
+    overlayRef.current.classList.add('is-active');
+  }
+
+  const OverlayClick = () => {
+    buyFormRef.current.classList.remove('is-active');
+    overlayRef.current.classList.remove('is-active');
   }
 
   return (
@@ -69,11 +80,18 @@ const ProductPage = () => {
                 </p>
               </dl>
 
-              {/* 데스크탑 화면에서만 출력 */}
-              <form className="product-page-form lg-only" action="" method="POST">
+              {/* 구매하기 섹션 */}
+              {/* 모바일/태블릿에서는 모달창 */}
+              {/* 데스크탑에서는 화면에 출력 */}
+              <form 
+                ref={buyFormRef}
+                className="product-page-form" 
+                action="" 
+                method="POST"
+              >
                 <h3 className="visually-hidden" aria-hidden>데스크탑 상품 구매 폼</h3>
 
-                <span className="form-product-info">{name} {price_info.unit}kg</span>
+                <strong className="form-product-info">{name} {price_info.unit}kg</strong>
 
                 <div className="form-count">
                   <section className="count-container">
@@ -96,7 +114,7 @@ const ProductPage = () => {
                     </div>
 
                   </section>
-                  <div ref={priceRef} className="price">
+                  <div className="price">
                     {PriceToText(price_info.price)}원
                   </div>
                 </div>
@@ -114,9 +132,6 @@ const ProductPage = () => {
                 </div>
               </form>
             </div>
-
-            
-            
           </section>
 
           <main className="product-detail">
@@ -136,16 +151,20 @@ const ProductPage = () => {
             </ul>
             </main>
 
-          {/* for mobile buy button */}
-          {/* <aside className="sm-only">
+          {/* for mobile and tablet buy button */}
+          <aside className="sm-md-buy lg-hidden">
             <h2 className="visually-hidden" aria-hidden>모바일 선택 창</h2>
-            <button type="button">구매하기</button>
-            <button>
-              <FontAwesomeIcon icon={faHeart} className="ic-faHeart" />
-              <span>11</span>
+            <button  
+              onClick={MobileBuyButton}
+              className="buy-button" 
+              type="button"
+            >
+              구매하기
             </button>
-          </aside> */}
+          </aside>
 
+          {/* for mobile and tablet Overlay */}
+          <div ref={overlayRef} onClick={OverlayClick} className="overlay lg-hidden"></div>
         </div>
       </div>
     </div>

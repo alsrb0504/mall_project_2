@@ -16,15 +16,19 @@
       text-align: right;
     }
 
-    .ic-bar,
-    .ic-user {
+    .ic-bar {
       font-size: 25px;
       font-weight: 100;
     }
-    
-    .ic-user {
-      color: $border-hover;
-    }
+  }
+
+  // for mobile and desktop, used all
+  .login-button {
+    padding: 6px 8px;
+    font-weight: 700;
+    color: $white;
+    background-color: $border-hover;
+    border-radius: 4px;
   }
 
   @include responsive(T) {

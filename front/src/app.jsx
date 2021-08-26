@@ -11,11 +11,7 @@ import ProductPage from './components/product-page/product-page';
 import './styles/main.scss';
 import LoginPage from './components/login-page/login-page';
 
-function App({ boardClass, product_class }) {
-
-
-  // const location = useLocation();
-  // const history = useHistory();
+function App({ boardClass, product_class, auth }) {
 
   const [ board, setBoard ] = useState(boardClass.get_board());
 
@@ -45,7 +41,7 @@ function App({ boardClass, product_class }) {
 
       <BrowserRouter>
 
-        <Header />
+        <Header auth={auth} />
 
         <main style={{backgroundColor: 'rgb(250, 250, 250)'}}>
 
@@ -57,12 +53,12 @@ function App({ boardClass, product_class }) {
 
             {/* 로그인 */}
             <Route path="/login" exact>
-              <LoginPage />
+              <LoginPage auth={auth} />
             </Route>
 
             {/* 회원가입 */}
             <Route path="/login/join" exact>
-              <LoginPage join={true} />
+              <LoginPage join={true} auth={auth} />
             </Route>/
 
 

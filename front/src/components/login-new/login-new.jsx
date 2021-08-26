@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import LoginOthers from '../login-others/login-others';
 
-const LoginNew = (props) => {
+const LoginNew = ({auth}) => {
 
   const history = useHistory();
 
@@ -27,12 +27,13 @@ const LoginNew = (props) => {
       email: emailRef.current.value,
     }
 
+    e.preventDefault();
     
     // console.log(new_user);
     // 새로운 유저 생성,
     // 나중에 서버와 연결
-
-    e.preventDefault();
+    
+    auth.Create(new_user);
     // push로 
     alert('회원가입이 완료되었습니다!!')
     history.push('/login');

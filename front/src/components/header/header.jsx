@@ -1,16 +1,14 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboardList, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
+const Header = memo(({auth}) => {
 
-const Header = memo(() => {
+  const [ loginState, setLoginState ] = useState(false);
+
   const location = useLocation();
   const history = useHistory();
-
-  const MoveLogin = () => {
-    history.push('/login');
-  }
 
   const MoveBoard = () => {
     history.push('/board');
@@ -42,6 +40,18 @@ const Header = memo(() => {
     }
   }
 
+  const handleLogout = () => {
+    auth.Logout();
+    setLoginState(false);
+  }
+  
+  useEffect( () => {
+    // login 된 것을 감지.
+    if(auth.cur_user) {
+      setLoginState(true);
+    }
+  }, [auth.cur_user])
+
   return(
       <header>
         <div className="container">
@@ -61,23 +71,50 @@ const Header = memo(() => {
                   </Link>
                 </h1>
                 
+                {/* for table/desktop */}
                 <nav className="header-nav sm-hidden">
                   <h1 className="visually-hidden">헤더 nav</h1> 
 
                   <ul className="header-nav-list" >
                     {
+                      // 현재 접속 중인 페이지에 따라 
+                      // nav에 언더라인 작성을 위함.
                       Active()
                     }
+                    
                     <li className="header-nav-item">
+                    {
+                      // 로그인한 유저가 없을 때, 로그인 페이지 이동.
+                      !loginState &&
                       <Link to='/login'>
                         <button className="login-button" type="button">로그인</button>
                       </Link>
+                    }
+                    {
+                      // 로그인한 유저가 있을 때, 현재 페이지 유지.
+                      loginState && 
+                      <button onClick={handleLogout} className="login-button" type="button">로그아웃</button>
+                    }
                     </li>
                   </ul>
                 </nav>
-                <button onClick={MoveLogin} className="icon-button sm-only ">
-                  <FontAwesomeIcon icon={faUser} className="ic-user" />
+
+                {/* for mobile */}
+                <button className="login-button sm-only">
+                  {
+                    // 로그인한 유저가 없을 때,
+                    !loginState && 
+                    <Link to='/login'>
+                      <span>Login</span>
+                    </Link>
+                  }
+                  {
+                    // 로그인한 유저가 있을 때,
+                    loginState && <span onClick={handleLogout}>Logout</span>
+                  }
                 </button>
+
+
               </div>
 
             </div>
