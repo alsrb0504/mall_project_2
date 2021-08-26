@@ -5,7 +5,10 @@ const ProductPage = () => {
 
   const [ count, setCount ] = useState(1);
 
+
+  const buyFormRef = useRef();
   const resultRef = useRef();
+  const overlayRef = useRef();
 
   const location = useLocation();
   const {name, sub_title, thumbnail, price_info, imgs} = location.state;
@@ -27,6 +30,16 @@ const ProductPage = () => {
   const Update_Price = (num) => {
     const price = PriceToText(num * price_info.price);
     resultRef.current.textContent = price + '원';
+  }
+
+  const MobileBuyButton = () => {
+    buyFormRef.current.classList.add('is-active');
+    overlayRef.current.classList.add('is-active');
+  }
+
+  const OverlayClick = () => {
+    buyFormRef.current.classList.remove('is-active');
+    overlayRef.current.classList.remove('is-active');
   }
 
   return (
@@ -70,7 +83,12 @@ const ProductPage = () => {
               {/* 구매하기 섹션 */}
               {/* 모바일/태블릿에서는 모달창 */}
               {/* 데스크탑에서는 화면에 출력 */}
-              <form className="product-page-form" action="" method="POST">
+              <form 
+                ref={buyFormRef}
+                className="product-page-form" 
+                action="" 
+                method="POST"
+              >
                 <h3 className="visually-hidden" aria-hidden>데스크탑 상품 구매 폼</h3>
 
                 <strong className="form-product-info">{name} {price_info.unit}kg</strong>
@@ -136,11 +154,17 @@ const ProductPage = () => {
           {/* for mobile and tablet buy button */}
           <aside className="sm-md-buy lg-hidden">
             <h2 className="visually-hidden" aria-hidden>모바일 선택 창</h2>
-            <button className="buy-button" type="button">구매하기</button>
+            <button  
+              onClick={MobileBuyButton}
+              className="buy-button" 
+              type="button"
+            >
+              구매하기
+            </button>
           </aside>
 
           {/* for mobile and tablet Overlay */}
-          <div className="overlay lg-hidden"></div>
+          <div ref={overlayRef} onClick={OverlayClick} className="overlay lg-hidden"></div>
         </div>
       </div>
     </div>

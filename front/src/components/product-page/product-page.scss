@@ -60,7 +60,7 @@
   }
 
   .product-page-form {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     padding: 15px 25px;
@@ -69,6 +69,12 @@
     border-radius: 4px;
     transform: translate(-50%, -50%);
     z-index: 1000;
+    visibility: hidden;
+    transition: visibility 100ms ease-in-out;
+
+    &.is-active {
+      visibility: visible;
+    }
 
     .form-product-info {
         display: inline-block;
@@ -260,14 +266,10 @@
   background-color: $overlay;
   opacity: 0.5;
   z-index: 100;
-
-
-  // visibility: hidden;
-
-  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  visibility: hidden;
+  transition: visibility 100ms ease-in-out;
 
   &.is-active {
-    // visibility: visible;
-    opacity: 1;
+    visibility: visible;
   }
 }
