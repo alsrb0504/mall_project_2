@@ -59,47 +59,23 @@
     }
   }
 
-  @include responsive(T) {
-    &-thumbnail,
-    img {
-      height: $md-image-size;
-    }
-  }
+  .product-page-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px 25px;
+    width: 280px;
+    background-color: $white;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 
-  @include responsive(D) {
-    @include flexbox;
-    padding-top: $lg-padding-top;
-
-    &-thumbnail {
-      height: 480px;
-      flex-basis: 55%;
-      text-align: center;
-
-      img {
-        width: 480px;
-        height: 100%;
-        overflow: hidden;
-      }
-    }
-
-    &-buy-part {
-      padding-top: 48px;
-      flex-basis: 35%;
-
-      .product-page-form {
-        padding: 24px 0px 0px 50px;
-      }
-    }
-
-    &-form {
-      font-size: 14px;
-      
-      .form-product-info {
+    .form-product-info {
         display: inline-block;
         margin-bottom: 12px;
-      }
-      
-      .form-count {
+    }
+    
+    .form-count {
         @include flexbox(between);
         padding-bottom: 16px;
         margin-bottom: 8px;
@@ -138,9 +114,9 @@
           font-size: 20px;
           font-weight: 600;
         }
-      }
+    }
 
-      .form-result {
+    .form-result {
         @include flexbox(end);
         margin-bottom: 16px;
 
@@ -148,6 +124,7 @@
           @include flexbox(cneter, end);
           height: 18px;
           font-size: 14px;
+          font-weight: 600;
           margin-right: 8px;
         }
 
@@ -155,9 +132,9 @@
           color: $border-hover;
           font-size: 18px;
         }
-      }
+    }
 
-      .form-button {
+    .form-button {
         @include flexbox;
         height: 48px;
         background-color: $border-hover;
@@ -176,6 +153,42 @@
           font-weight: 700;
           font-size: 20px;
         }
+    }
+  }
+
+
+  @include responsive(T) {
+    &-thumbnail,
+    img {
+      height: $md-image-size;
+    }
+  }
+
+  @include responsive(D) {
+    @include flexbox;
+    padding-top: $lg-padding-top;
+
+    &-thumbnail {
+      height: 480px;
+      flex-basis: 55%;
+      text-align: center;
+
+      img {
+        width: 480px;
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+
+    &-buy-part {
+      padding-top: 48px;
+      flex-basis: 35%;
+
+      .product-page-form {
+        position: static;
+        transform: none;
+        width: 100%;
+        padding: 24px 0px 0px 50px;
       }
     }
   }
@@ -198,5 +211,63 @@
     img {
       height: 680px;
     }
+  }
+}
+
+
+
+
+.sm-md-buy {
+  @include flexbox(center, center);
+  position: fixed;
+  top: 90%;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: $white;
+  border-top: 1px solid $border;
+  
+  .buy-button {
+    width: 90%;
+    height: 80%;
+    background-color: $border-hover;
+    font-size: 20px;
+    font-weight: 700;
+    color: $white;
+    border-radius: 6px;
+    transition: opacity 300ms ease-in-out;
+    
+    &:hover,
+    &:active {
+      opacity: 0.8;
+    }
+  }
+  
+  @include responsive(T) {
+    button {
+      width: 80%;
+    }
+  }
+}
+
+// 모바일/태블릿 투명 검은 배경.
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $overlay;
+  opacity: 0.5;
+  z-index: 100;
+
+
+  // visibility: hidden;
+
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+
+  &.is-active {
+    // visibility: visible;
+    opacity: 1;
   }
 }
